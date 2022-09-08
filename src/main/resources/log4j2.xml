@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss} %c{1}: %msg%n" />
+		</Console>
+		<RollingFile name="server" fileName="logs/server.log" filePattern="logs/server.%d{yyyy-MM-dd-HH-mm-ss}.log" ignoreExceptions="false">
+			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss} %c{1}: %msg%n" />
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="100 MB" />
+			</Policies>
+		</RollingFile>
+		<RollingFile name="error" fileName="logs/error/error.log" filePattern="logs/error/error.%d{yyyy-MM-dd-HH-mm-ss}.log" ignoreExceptions="false">
+			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss} %c{1}: %msg%n" />
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="100 MB" />
+			</Policies>
+		</RollingFile>
+		<RollingFile name="audit" fileName="logs/audit/audit.log" filePattern="logs/audit/audit.%d{yyyy-MM-dd-HH-mm-ss}.log" ignoreExceptions="false">
+			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss} %c{1}: %msg%n" />
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="100 MB" />
+			</Policies>
+		</RollingFile>
+		<RollingFile name="accounting" fileName="logs/accounting/accounting.log" filePattern="logs/accounting/accounting.%d{yyyy-MM-dd-HH-mm-ss}.log" ignoreExceptions="false">
+			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss} %c{1}: %msg%n" />
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="100 MB" />
+			</Policies>
+		</RollingFile>
+		<RollingFile name="chat" fileName="logs/chat/chat.log" filePattern="logs/chat/chat.%d{yyyy-MM-dd-HH-mm-ss}.log" ignoreExceptions="false">
+			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss} %c{1}: %msg%n" />
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="100 MB" />
+			</Policies>
+		</RollingFile>
+		<RollingFile name="item" fileName="logs/item/item.log" filePattern="logs/item/item.%d{yyyy-MM-dd-HH-mm-ss}.log" ignoreExceptions="false">
+			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss} %c{1}: %msg%n" />
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="100 MB" />
+			</Policies>
+		</RollingFile>
+		<RollingFile name="enchant_item" fileName="logs/enchant/item/enchant_item.log" filePattern="logs/enchant/item/enchant_item.%d{yyyy-MM-dd-HH-mm-ss}.log" ignoreExceptions="false">
+			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss} %c{1}: %msg%n" />
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="100 MB" />
+			</Policies>
+		</RollingFile>
+		<RollingFile name="enchant_skill" fileName="logs/enchant/skill/enchant_skill.log" filePattern="logs/enchant/skill/enchant_skill.%d{yyyy-MM-dd-HH-mm-ss}.log" ignoreExceptions="false">
+			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss} %c{1}: %msg%n" />
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="100 MB" />
+			</Policies>
+		</RollingFile>
+		<RollingFile name="olympiad" fileName="logs/olympiad/olympiad.csv" filePattern="logs/olympiad/olympiad.%d{yyyy-MM-dd-HH-mm-ss}.csv" ignoreExceptions="false">
+			<PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss} %c{1}: %msg%n" />
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="100 MB" />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Root level="debug">
+			<appender-ref ref="console" level="info" />
+			<appender-ref ref="server" level="info" />
+			<appender-ref ref="error" level="warn" />
+		</Root>
+		<Logger name="audit" level="info" additivity="false">
+			<AppenderRef ref="audit" />
+		</Logger>
+		<Logger name="accounting" level="info" additivity="false">
+			<AppenderRef ref="accounting" />
+		</Logger>
+		<Logger name="chat" level="info" additivity="false">
+			<AppenderRef ref="chat" />
+		</Logger>
+		<Logger name="item" level="info" additivity="false">
+			<AppenderRef ref="item" />
+		</Logger>
+		<Logger name="enchant_item" level="info" additivity="false">
+			<AppenderRef ref="enchant_item" />
+		</Logger>
+		<Logger name="enchant_skill" level="info" additivity="false">
+			<AppenderRef ref="enchant_skill" />
+		</Logger>
+		<Logger name="olympiad" level="info" additivity="false">
+			<AppenderRef ref="olympiad" />
+		</Logger>
+	</Loggers>
+</Configuration>
