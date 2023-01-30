@@ -96,11 +96,7 @@ public final class RequestMagicSkillUse extends L2GameClientPacket {
 		// players mounted on pets cannot use any toggle skills
 		if (skill.isToggle() && activeChar.isMounted()) {
 			return;
-		}
 		
-		// Stop if use self-buff (except if on AirShip or Boat).
-		if ((skill.isContinuous() && !skill.isDebuff() && (skill.getTargetType() == TargetType.SELF)) && (!activeChar.isInAirShip() || !activeChar.isInBoat())) {
-			activeChar.getAI().setIntention(CtrlIntention.AI_INTENTION_MOVE_TO, activeChar.getLocation());
 		}
 		
 		activeChar.useMagic(skill, _ctrlPressed, _shiftPressed);
